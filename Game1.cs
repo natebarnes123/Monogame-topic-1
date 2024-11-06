@@ -9,6 +9,8 @@ namespace Monogame_topic_1
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D dinoTexture;
+        Texture2D midastexture;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -18,8 +20,11 @@ namespace Monogame_topic_1
 
         protected override void Initialize()
         {
+            this.Window.Title = "Nates game";
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = 800; // Sets the width of the window
+            _graphics.PreferredBackBufferHeight = 500; // Sets the height of the window
+            _graphics.ApplyChanges(); // Applies the new dimensions
             base.Initialize();
         }
 
@@ -28,6 +33,8 @@ namespace Monogame_topic_1
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            dinoTexture = Content.Load<Texture2D>("dino");
+            midas
         }
 
         protected override void Update(GameTime gameTime)
@@ -42,9 +49,17 @@ namespace Monogame_topic_1
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.LawnGreen);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(dinoTexture,new Vector2(10, 10), Color.White);
+            _spriteBatch.Draw(dinoTexture, new Vector2(400, 300), Color.White);
+
+
+            _spriteBatch.End();
+
 
             base.Draw(gameTime);
         }
