@@ -10,7 +10,8 @@ namespace Monogame_topic_1
         private SpriteBatch _spriteBatch;
 
         Texture2D dinoTexture;
-        Texture2D midastexture;
+        Texture2D midasTexture;
+        Rectangle
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -28,13 +29,13 @@ namespace Monogame_topic_1
             base.Initialize();
         }
 
-        protected override void LoadContent()
+        protected override void LoadContent() 
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
             dinoTexture = Content.Load<Texture2D>("dino");
-            midas
+            midasTexture = Content.Load<Texture2D>("midas");
         }
 
         protected override void Update(GameTime gameTime)
@@ -55,8 +56,8 @@ namespace Monogame_topic_1
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(dinoTexture,new Vector2(10, 10), Color.White);
-            _spriteBatch.Draw(dinoTexture, new Vector2(400, 300), Color.White);
-
+            _spriteBatch.Draw(midasTexture, new Vector2(400, 300), Color.White);
+            
 
             _spriteBatch.End();
 
