@@ -11,7 +11,11 @@ namespace Monogame_topic_1
 
         Texture2D dinoTexture;
         Texture2D midasTexture;
-        Rectangle
+        Texture2D mincrftBackrnd;
+
+
+
+        //Rectangle 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -22,9 +26,10 @@ namespace Monogame_topic_1
         protected override void Initialize()
         {
             this.Window.Title = "Nates game";
+           
             // TODO: Add your initialization logic here
-            _graphics.PreferredBackBufferWidth = 800; // Sets the width of the window
-            _graphics.PreferredBackBufferHeight = 500; // Sets the height of the window
+            _graphics.PreferredBackBufferWidth = 600; // Sets the width of the window
+            _graphics.PreferredBackBufferHeight = 600; // Sets the height of the window
             _graphics.ApplyChanges(); // Applies the new dimensions
             base.Initialize();
         }
@@ -36,6 +41,7 @@ namespace Monogame_topic_1
             // TODO: use this.Content to load your game content here
             dinoTexture = Content.Load<Texture2D>("dino");
             midasTexture = Content.Load<Texture2D>("midas");
+            mincrftBackrnd = Content.Load<Texture2D>("backround");
         }
 
         protected override void Update(GameTime gameTime)
@@ -54,10 +60,10 @@ namespace Monogame_topic_1
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-
+            
             _spriteBatch.Draw(dinoTexture,new Vector2(10, 10), Color.White);
             _spriteBatch.Draw(midasTexture, new Vector2(400, 300), Color.White);
-            
+            _spriteBatch.Draw(mincrftBackrnd, new Rectangle(0, 0, 600, 600), Color.White);
 
             _spriteBatch.End();
 
