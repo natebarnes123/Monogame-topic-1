@@ -11,10 +11,10 @@ namespace Monogame_topic_1
 
         Texture2D dinoTexture;
         Texture2D midasTexture;
-        Texture2D mincrftBackrnd;
-
-
-
+        Texture2D minecraftBackround;
+        Texture2D burger;
+        Texture2D boat;
+        Texture2D drink;
         //Rectangle 
         public Game1()
         {
@@ -41,7 +41,10 @@ namespace Monogame_topic_1
             // TODO: use this.Content to load your game content here
             dinoTexture = Content.Load<Texture2D>("dino");
             midasTexture = Content.Load<Texture2D>("midas");
-            mincrftBackrnd = Content.Load<Texture2D>("backround");
+            minecraftBackround = Content.Load<Texture2D>("backround");
+            burger = Content.Load<Texture2D>("burger");
+            boat = Content.Load<Texture2D>("boat");
+            drink = Content.Load<Texture2D>("drink");
         }
 
         protected override void Update(GameTime gameTime)
@@ -61,10 +64,13 @@ namespace Monogame_topic_1
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             
-            _spriteBatch.Draw(dinoTexture,new Vector2(10, 10), Color.White);
-            _spriteBatch.Draw(midasTexture, new Vector2(400, 300), Color.White);
-            _spriteBatch.Draw(mincrftBackrnd, new Rectangle(0, 0, 600, 600), Color.White);
-
+            
+            _spriteBatch.Draw(minecraftBackround, new Rectangle(0, 0, 600, 600), Color.White);
+            
+            _spriteBatch.Draw(boat, new Rectangle(0,0, 500, 600), Color.White);
+            _spriteBatch.Draw(midasTexture, new Vector2(150, 300), Color.White);
+            _spriteBatch.Draw(burger, new Vector2(0, 230), Color.White);
+            _spriteBatch.Draw(drink, new Vector2(150, 150), Color.White);
             _spriteBatch.End();
 
 
